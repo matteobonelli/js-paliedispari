@@ -22,7 +22,7 @@
             }
             // reverseWord = arrayToString(container);
             console.log(reverseWord);
-            if(reverseWord.toLowerCase === inputWord.toLowerCase){
+            if(reverseWord.toLowerCase() === inputWord.toLowerCase()){
                 message = 'Questa parola è un palindromo!';
                 alertColor = 'alert-success';
             } else{
