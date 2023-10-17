@@ -16,10 +16,9 @@
             alertColor = 'alert-warning';
         } else{
             for(i = inputWord.length - 1; i >= 0; i--){
-                let letterPalindromo = inputWord[i];
-                container.push(letterPalindromo);
+                container.push(inputWord[i]);
             }
-            let palindromo = container.join('');
+            let palindromo = arrayToString(container);
             console.log(palindromo);
             if(palindromo === inputWord){
                 message = 'Questa parola è un palindromo!';
@@ -31,6 +30,10 @@
         }
         printOutputAlert(message, alertColor);
     };
+
+    function arrayToString(array){
+        return array.join('');
+    }
 
     function printOutputAlert (msg, aColor){
         const outputMessage = document.querySelector('.alert');
