@@ -11,16 +11,18 @@
         let container = [];
         let message;
         let alertColor;
-        if(inputWord === ''){
+        if(inputWord === '' || typeof inputWord !== 'string'){
             message = 'Scrivi qualcosa di valido!';
             alertColor = 'alert-warning';
         } else{
+            let reverseWord = '';
             for(i = inputWord.length - 1; i >= 0; i--){
-                container.push(inputWord[i]);
+                // container.push(inputWord[i]);
+                reverseWord += inputWord[i];
             }
-            let palindromo = arrayToString(container);
-            console.log(palindromo);
-            if(palindromo === inputWord){
+            // reverseWord = arrayToString(container);
+            console.log(reverseWord);
+            if(reverseWord === inputWord){
                 message = 'Questa parola è un palindromo!';
                 alertColor = 'alert-success';
             } else{
