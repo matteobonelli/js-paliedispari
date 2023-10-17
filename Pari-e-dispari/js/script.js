@@ -13,13 +13,7 @@ dispariButton.addEventListener('click', checkIfDispari);
 
 numberInputButton.addEventListener('click', checkIfNumbersBetween);
 
-tryAgainButton.addEventListener('click', function(){
-    pariButton.classList.remove('d-none');
-    dispariButton.classList.remove('d-none');
-    const visualizedMessage = document.getElementById('outputAlert');
-    visualizedMessage.classList.add('d-none');
-    document.getElementById('data').value='';
-})
+tryAgainButton.addEventListener('click', resetButton);
 
 function checkIfPari(){
     isPari = true;
@@ -46,23 +40,40 @@ function checkIfNumbersBetween(){
     console.log(userNumber, computerNumber)
     let msg;
     if(userNumber < 1 || userNumber > 5 || isNaN(userNumber)){
-        msg = 'Inserisci un numero valido'
+        msg = `<div class ="display-4 text-danger">Inserisci un numero valido!<div>`
     } else {
         let sumNumber = userNumber + computerNumber;
         console.log(sumNumber);
         if(isPari){
-            msg = (sumNumber % 2 === 0) ? 'Hai vinto!' : 'Hai perso!';
+            msg = (sumNumber % 2 === 0) ? `Il tuo numero (${userNumber}) + il numero del computer (${computerNumber}) fanno : ${sumNumber}.
+            <div class ="display-4 text-success">Hai vinto!<div>` : `Il tuo numero (${userNumber}) + il numero del computer (${computerNumber}) fanno : ${sumNumber}.
+            <div class ="display-4 text-danger">Hai perso!<div>`;
             console.log(msg)
         } else{
-            msg = (sumNumber % 2 === 1) ? 'Hai vinto!' : 'Hai perso!';
+            msg = (sumNumber % 2 === 1) ? `Il tuo numero (${userNumber}) + il numero del computer (${computerNumber}) fanno : ${sumNumber}.
+            <div class ="display-4 text-success">Hai vinto!<div>` : `Il tuo numero (${userNumber}) + il numero del computer (${computerNumber}) fanno : ${sumNumber}.
+            <div class ="display-4 text-danger">Hai perso!<div>`;
             console.log(msg)
         }
     }
+    whoIsTheWinner(msg);
+}   
+
+function whoIsTheWinner(message){
     const visualizedMessage = document.getElementById('outputAlert');
     const theWinnerIs = document.querySelector('.alert');
     console.log(theWinnerIs, visualizedMessage);
-    theWinnerIs.innerText = msg;
+    theWinnerIs.innerHTML = message;
     visualizedMessage.classList.remove('d-none');
+}
+
+
+function resetButton(){
+    pariButton.classList.remove('d-none');
+    dispariButton.classList.remove('d-none');
+    const visualizedMessage = document.getElementById('outputAlert');
+    visualizedMessage.classList.add('d-none');
+    document.getElementById('data').value='';
 }
 
 function getRndInteger(min, max){
