@@ -4,7 +4,6 @@ const numberInputButton = document.querySelector('.btn-danger');
 const tryAgainButton = document.querySelector('.btn-dark');
 const inputLabelPariDispari = document.getElementById('inputLabel');
 let isPari;
-let isDispari;
 console.log(pariButton, dispariButton, inputLabelPariDispari)
 
 pariButton.addEventListener('click', checkIfPari);
@@ -17,20 +16,18 @@ tryAgainButton.addEventListener('click', resetButton);
 
 function checkIfPari(){
     isPari = true;
-    isDispari = false;
     pariButton.classList.add('d-none');
     dispariButton.classList.add('d-none');
     inputLabelPariDispari.classList.remove('d-none');
-    console.log(isPari, isDispari);
+    console.log(isPari);
 }
 
 function checkIfDispari(){
-    isDispari = true;
     isPari = false;
     pariButton.classList.add('d-none');
     dispariButton.classList.add('d-none');
     inputLabelPariDispari.classList.remove('d-none');
-    console.log(isPari, isDispari);
+    console.log(isPari);
 }
 
 function checkIfNumbersBetween(){
