@@ -39,22 +39,24 @@ function checkIfNumbersBetween(){
     if(userNumber < 1 || userNumber > 5 || isNaN(userNumber)){
         msg = `<div class ="display-4 text-danger">Inserisci un numero valido!<div>`
     } else {
-        let sumNumber = userNumber + computerNumber;
+        let sumNumber = numberSumCalculator(userNumber, computerNumber);
         console.log(sumNumber);
         if(isPari){
             msg = (sumNumber % 2 === 0) ? `Il tuo numero (${userNumber}) + il numero del computer (${computerNumber}) fanno : ${sumNumber}.
             <div class ="display-4 text-success">Hai vinto!<div>` : `Il tuo numero (${userNumber}) + il numero del computer (${computerNumber}) fanno : ${sumNumber}.
             <div class ="display-4 text-danger">Hai perso!<div>`;
-            console.log(msg)
         } else{
             msg = (sumNumber % 2 === 1) ? `Il tuo numero (${userNumber}) + il numero del computer (${computerNumber}) fanno : ${sumNumber}.
             <div class ="display-4 text-success">Hai vinto!<div>` : `Il tuo numero (${userNumber}) + il numero del computer (${computerNumber}) fanno : ${sumNumber}.
             <div class ="display-4 text-danger">Hai perso!<div>`;
-            console.log(msg)
         }
     }
     whoIsTheWinner(msg);
 }   
+
+function numberSumCalculator(num1, num2){
+    return num1 + num2;
+}
 
 function whoIsTheWinner(message){
     const visualizedMessage = document.getElementById('outputAlert');
