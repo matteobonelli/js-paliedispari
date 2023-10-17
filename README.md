@@ -10,4 +10,5 @@ PARI E DISPARI
 - Appena premuto salvo il valore dell'input in una variabile e genero un altro numero con la funzione rndInteger, creo una variabile sumNumber in cui sommo l'input dell'utente ed il numero generato randomicamente.
 - creo un if basato sul valore di isTrue, se è true uso un if in cui calcolo se il modulo di 2 di sumNumber è uguale a 0, se è false uso un if in cui calcolo se il modulo di 2 di sumNumber è uguale a 1.
 - in base al risultato, salvo dentro la variabile msg un certo messaggio da visualizzare all'utente.
--infine creo una funzione che prendendo in input la variabile msg, mi visualizza a schermo se ho vinto o se ho perso.
+- infine creo una funzione che prendendo in input la variabile msg, mi visualizza a schermo se ho vinto o se ho perso.
+- Inoltre, nella schermata Hai vinto/ Hai perso, visualizzo un bottone Riprova, che riporterà l'utente alla schermata iniziale della pagina.
